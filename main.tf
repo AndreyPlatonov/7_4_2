@@ -3,20 +3,6 @@ provider "aws" {
 }
 
 
-resource "aws_s3_bucket" "b73" {
-    bucket = "dz-7-3-bucket"
-    acl = "private"
-}
-
-terraform {
-  backend "s3" {
-    bucket = "dz-7-3-bucket"
-    key    = "my/key"
-    region = "us-west-2"
-  }
-}
-
-
 data "aws_ami" "latest_ubuntu" {
          most_recent = true
          owners      = ["amazon"]
